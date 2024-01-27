@@ -1,0 +1,125 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton1 = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local TextButton3 = Instance.new("TextButton")
+local TextButton4 = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0,0,0)
+Frame.BorderColor3 = Color3.new(1,1,1)
+Frame.BorderSizePixel = 1
+Frame.Position = UDim2.new(0.293040276, 0, 0.491666675, 0)
+Frame.Size = UDim2.new(0.4,0,0.5)
+Frame.Active = true
+Frame.Draggable = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.new(0,0,0)
+TextButton.BackgroundTransparency = 1
+TextButton.Position = UDim2.new(0.23,0,0.1)
+TextButton.TextColor3 = Color3.new(1,1,1)
+TextButton.Size = UDim2.new(0.5,0,0.15)
+TextButton.Font = Enum.Font.SourceSansLight
+TextButton.FontSize = Enum.FontSize.Size14
+TextButton.Text = "Sneaker Resell MadeBy:yourgurlsaiji"
+TextButton.TextScaled = true
+TextButton.TextSize = 8
+TextButton.TextWrapped = true
+
+TextButton.MouseButton1Click:connect(function()
+--Script Here
+end)
+
+TextButton1.Parent = Frame
+TextButton1.BackgroundColor3 = Color3.new(0,0,0)
+TextButton1.BackgroundTransparency = 0
+TextButton1.BorderSizePixel = 1
+TextButton1.BorderColor3 = Color3.new(1,1,1)
+TextButton1.Position = UDim2.new(0.05,0,0.3)
+TextButton1.TextColor3 = Color3.new(1,1,1)
+TextButton1.Size = UDim2.new(0.35,0,0.15)
+TextButton1.Font = Enum.Font.SourceSansLight
+TextButton1.FontSize = Enum.FontSize.Size14
+TextButton1.Text = "Bring PC Screen"
+TextButton1.TextScaled = true
+TextButton1.TextSize = 8
+TextButton1.TextWrapped = true
+
+TextButton1.MouseButton1Click:connect(function()
+local player = game.Players.LocalPlayer
+local character = player.Character
+
+local parts = game.Workspace:GetDescendants()
+for _, part in ipairs(parts) do
+    if part:IsA("BasePart") and part.Name == "PCScreen" then -- Replace "Part" with the name of the part you want
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        part.CFrame = CFrame.new(humanoidRootPart.Position)
+    end
+end
+end)
+
+TextButton2.Parent = Frame
+TextButton2.BackgroundColor3 = Color3.new(0,0,0)
+TextButton2.BackgroundTransparency = 0
+TextButton2.BorderSizePixel = 1
+TextButton2.BorderColor3 = Color3.new(1,1,1)
+TextButton2.Position = UDim2.new(0.57,0,0.3)
+TextButton2.TextColor3 = Color3.new(1,1,1)
+TextButton2.Size = UDim2.new(0.35,0,0.15)
+TextButton2.Font = Enum.Font.SourceSansLight
+TextButton2.FontSize = Enum.FontSize.Size14
+TextButton2.Text = "Teleport to NPC"
+TextButton2.TextScaled = true
+TextButton2.TextSize = 8
+TextButton2.TextWrapped = true
+
+TextButton2.MouseButton1Click:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-167, 64, 148)
+end)
+
+TextButton3.Parent = Frame
+TextButton3.BackgroundColor3 = Color3.new(0,0,0)
+TextButton3.BackgroundTransparency = 0
+TextButton3.BorderSizePixel = 1
+TextButton3.BorderColor3 = Color3.new(1,1,1)
+TextButton3.Position = UDim2.new(0.05,0,0.7)
+TextButton3.TextColor3 = Color3.new(1,1,1)
+TextButton3.Size = UDim2.new(0.35,0,0.15)
+TextButton3.Font = Enum.Font.SourceSansLight
+TextButton3.FontSize = Enum.FontSize.Size14
+TextButton3.Text = "Selling Manipulation"
+TextButton3.TextScaled = true
+TextButton3.TextSize = 8
+TextButton3.TextWrapped = true
+
+TextButton3.MouseButton1Click:connect(function()
+game.Players.LocalPlayer['Inventory']['SellableInventory']['Mike Air Force 1 Black'].Name = "Air Bogdan 4 Infrared"
+end)
+
+TextButton4.Parent = Frame
+TextButton4.BackgroundColor3 = Color3.new(0,0,0)
+TextButton4.BackgroundTransparency = 0
+TextButton4.BorderSizePixel = 1
+TextButton4.BorderColor3 = Color3.new(1,1,1)
+TextButton4.Position = UDim2.new(0.57,0,0.7)
+TextButton4.TextColor3 = Color3.new(1,1,1)
+TextButton4.Size = UDim2.new(0.35,0,0.15)
+TextButton4.Font = Enum.Font.SourceSansLight
+TextButton4.FontSize = Enum.FontSize.Size14
+TextButton4.Text = "Gyat"
+TextButton4.TextScaled = true
+TextButton4.TextSize = 8
+TextButton4.TextWrapped = true
+
+TextButton4.MouseButton1Click:connect(function()
+local args = {
+    [1] = "Gyat\240\159\164\145",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+end)
